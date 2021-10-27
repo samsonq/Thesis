@@ -8,10 +8,11 @@ Thesis submitted to the MIT Sloan School of Management for conferral of the degr
 
 ## Financial Instruments
 - Vanilla/Exotic Derivatives
-  - Options (Calls, Puts), Forwards, Futures, Swaps
-  - European, American, Asian Options
-- Equities, Cryptocurrency
+  - Options (Calls, Puts), [Forwards, Futures, Swaps]
+  - (European, American, Asian) Options
+- Equities, Bonds, Cryptocurrency
 - vs. Binomial Options Pricing Model, Black-Scholes (BSM)
+  - Arbitrage opportunities in markets from options mispricing
 
 ## Reinforcement Learning Methods
 - Deep Q Network
