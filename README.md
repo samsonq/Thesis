@@ -21,3 +21,5 @@ This study extends previous work and hopes to implement and apply deep reinforce
 ## Methods
 - Deep Q Network
   - Double DQN
+- Inverse Reinforcement Learning (IRL)
+- Q-Learning Black Scholes (QLBS)
