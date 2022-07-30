@@ -1,5 +1,5 @@
 # Master's Thesis
-"Multi-Agent Deep Reinforcement Learning for Derivatives Pricing and Dynamic Hedging"
+"Multi-Agent Deep Reinforcement Learning and Agent-Based Modeling for Derivatives Pricing and Dynamic Hedging"
 
 Thesis submitted to the MIT Sloan School of Management in partial fulfillment of the requirements for the degree of Master of Finance at the Massachusetts Institute of Technology.
 
