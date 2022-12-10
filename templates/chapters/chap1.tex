@@ -6,56 +6,56 @@
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Introduction}
 
-Derivatives pricing has been a significant field in modern finance as investment managers seek to understand the factors that impact derivative contracts and the underlying, and make trading and hedging decisions on those insights. The goal of this research is to explore methodologies in derivatives pricing and hedging strategies, and to propose a data-driven approach using multi-agent systems to optimize financial objectives.
+\section{History of Derivatives Pricing Methods}
 
-\section{Background of Derivatives Pricing Methods}
+Financial derivatives pricing has been a prominent and important field in modern finance as investment managers seek to understand the factors that impact derivative contract prices and devise trading strategies on those insights. Derivatives have also been used as a tool for hedging to reduce risk in an investor's positions over time. Options, one type of financial derivative, are one of the most popular instruments for investors, trading an average daily of 39 million contracts. Previous work done on options pricing rely heavily on assumptions about the market and underlying stock movement to solve for partial differential equations and derive pricing models. For example, many models rely on the assumption that stock prices move according to a geometric Brownian motion stochastic process. The most popular framework for pricing options is the Black-Scholes Merton (BSM) model, derived based on those market assumptions to measure the value of derivatives based on factors including the underlying asset volatility, strike price, interest rate, and expiration time. Another method to price options is to run Monte Carlo Simulations on stock price movement, assuming stock price follows geometric Brownian motion paths, and derive option value based on the results of the simulations. These assumptions about the market and underlying, however, do not always hold in the empirical world, and stock movement patterns are heavily influenced by many factors apart from randomness.
 
-Many derivatives pricing models have been created to measure the intrinsic value of derivatives based on factors such as the underlying asset volatility, expiration time, and so on. A notable framework for options pricing known as the Black-Scholes-Merton (BSM) model, developed by Fischer Black, Myron Scholes, and Robert Merton, won the Nobel Prize.
+\section{Research Motivation}
 
-\section{Research Motivations}\label{ch1:sec}
+\subsection{Market Assumptions}
 
-Despite the elegance and theoretically-sound logic of modern pricing models such as the BSM model, these models depend on many market condition assumptions that are unrealistic in the real world. For example, 
+Despite the elegance of the modern theoretically-sound options pricing models such as Black-Scholes, these models depend on many market condition assumptions that are unrealistic in the real world. For example, in the real world, markets are incomplete and also have many frictions. These market frictions can have significant impacts on option prices and interfere with many trading and hedging strategies. For example, transaction costs resulting from market bid-ask spreads are an important factor to consider, but not accounted for by the Black-Scholes model. Furthermore, interest rates and stock prices are affected by a large number of factors that these stochastic pricing models do not account for. These factors reside within the empirical market data as seen by actual stock price movements and market orders, influenced by trading transactions between various participants in the market. In reality, the market microstructure is very complex and is affected by a large number of factors. As a result, the Black-Scholes model and other traditional options pricing methods do not yield exact option prices quoted on the market. 
+\\
+\\
+Nevertheless, the model serves as a good framework for analyzing which factors come into play for option price movement and can be a useful baseline method. Attributes of an option including strike price and maturity as well as the underlying spot price, volatility, and interest rates are all important factors contributing to the option's price. The Black-Scholes model is given by the following partial differential equation and the resulting closed-form solution for the price of a call option with strike price $K$, maturity $t$, underlying spot price $S$, underlying volatility $\sigma$, and risk-free rate $r$:
+\begin{equation}
+\begin{aligned}
+    \frac{\partial C}{\partial t}+\frac{1}{2}\sigma^2S^2\frac{\partial^2C}{\partial S^2}+rS\frac{\partial C}{\partial S}-rC = 0\\
+    C=N(d)S-N(d-\sigma\sqrt{t})Ke^{-rt}\\
+    d=\frac{\ln{\frac{S}{K}}+(r+\frac{\sigma^2}{2})t}{\sigma\sqrt{t}}\\
+\end{aligned}
+\end{equation}
+This study explores how to adapt these conventional options pricing frameworks to develop a model-free deep reinforcement learning-based options pricing and hedging algorithm based on empirical market data without relying on market assumptions.
 
-\subsection{Market Frictions and Incomplete Markets}
-\subsection{Reinforcement Learning}
+\subsection{Limitations of Historical Financial Data}
+Historical financial data is very useful, as it represents real data observed in the market, but incredibly scarce, especially for applications of machine learning methods. If there was an abundance of historical stock price data that is representative of diverse market conditions, it would be possible to build and train machine learning models that are more robust when deployed live. However, even with daily-frequency market data, assuming there are 252 trading days in a year translates to only 2,520 data points for a 10-year period. This presents a problem with only using historical data to build models. To effectively build models and test for an algorithm's generalizability, it is essential to have a large number of samples to train and evaluate a model on.
 
-% This is an example of how you would use tgrind to include an example
-% of source code; it is commented out in this template since the code
-% example file does not exist.  To use it, you need to remove the '%' on the
-% beginning of the line, and insert your own information in the call.
-%
-%\tgrind[htbp]{code/be.s.tex}{Block Exponent}{opt:be}
+\subsubsection{Backtesting Limitations}
+Often traders evaluate and test developed trading strategies by backtesting the strategies on historical market data. Although backtesting is a popular methodology used for testing trading strategy performances, it has many fundamental flaws that may bias the results and allow traders to believe the particular strategy will work once deployed, when in fact it does not.
+\\
+\\
+Backtesting simply uses historical market data to evaluate a strategy's performance but does not account for the effect of the strategy's execution on the response from other market participants. This flaw is fundamental in the backtesting methodology because it uses the same data for evaluation, regardless of the trading strategy being evaluated. However, in real-world markets, the execution of different trading strategies, varying by factors such as order size, may have a significant impact on other market orders placed in response. Because of this, backtesting on historical data may bias the evaluation result and is not representative of how a trading algorithm will actually perform once deployed. Furthermore, the factors that affect the markets are constantly evolving and changing over time. Shifts in economic trends may make backtesting on historical data unfavorable because of the inflexibility of testing conditions. Instead, a framework is required that can learn from historical market data trends and consistently generate new market data that is representative of real market data.
+
+\subsubsection{Generating Representative Market Data}
+A traditional method for generating market data comes through the use of Monte Carlo simulations, in which a large number of data samples are generated through probabilistic simulations. These simulations are parameter-based and rely on the careful selection of parameters to produce accurate and representative data. However, not only are markets always dynamic and have constantly changing conditions, it is difficult to determine which parameters are most important to include in the simulation. Many derivatives pricing models rely on these assumptions about the distribution of the underlying asset price movement. For example, a popular framework for using Monte Carlo simulations to generate stock price paths assumes stock prices follow geometric Brownian motion processes and price levels are log-normally distributed. The Black-Scholes model assumes the underlying stock follows a geometric Brownian motion process (with expected return $\mu$ and volatility $\sigma$), defined by the following process:
+\begin{equation}
+\begin{aligned}
+    \frac{dS}{S} &= \mu dt+\sigma dW\\
+    S_T &= S_0*e^{(r-\frac{1}{2}\sigma^2)t+\sigma\sqrt{t}*N(0,1)}
+\end{aligned}
+\end{equation}
+Using this process, Monte Carlo simulations generate a large number of stock price paths based on the specified parameters for mean return and volatility. The advantage of this approach is the unbounded ability to generate large amounts of data representative of the vast amount of different possible paths that the stock can take. The disadvantage, however, comes with the parametric assumptions about underlying stock price movement which may not be completely market-realistic.
+\\
+\\
+To overcome some of the limitations of backtesting, a generative market simulation system is required to produce synthetic market data based on historical market data. Adversarial machine learning has the ability to generate fake data that closely resembles real data. In this study, we explore the use of generative adversarial networks (GANs) to learn the market microstructure and systematically generate realistic synthetic market data based on historical market data. This approach is an unsupervised, non-parametric approach as opposed to the use of Monte Carlo simulations. Ultimately, we adapt this framework to train and evaluate the efficacy of our proposed deep reinforcement learning-based pricing and hedging methods.
 
 \section{Objective}
 
-Quisque sed ultrices leo. Donec vestibulum auctor nibh, at faucibus libero mollis in. Quisque massa lorem, feugiat a lectus in, lobortis volutpat lectus. Donec accumsan dui erat, eu tempor tortor facilisis sed. Nulla ullamcorper augue et sapien dapibus, quis bibendum velit porta. Nullam mattis vehicula tortor porttitor porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent suscipit, lorem vel viverra rhoncus, turpis orci dignissim dui, bibendum pulvinar justo sem vel lorem. Nam porttitor mollis tristique. Aliquam rhoncus magna quis nisl varius mattis. Sed rhoncus, diam in gravida iaculis, mauris tellus imperdiet turpis, at porttitor est leo vel velit. Praesent faucibus ornare sodales. Sed eu lorem purus.  
+Previous work done on derivatives pricing rely heavily on assumptions about the market and underlying stock movement to be consistent with theoretical standards for solving partial differential equations and deriving pricing models. For example, many simulations rely on the assumption that stock prices move according to a geometric Brownian motion stochastic process. This assumption, however, does not always hold in the empirical world, and underlying price movement patterns are heavily influenced by many factors apart from randomness. The most common and famous framework to compare Monte Carlo pricing simulation results to is the Black-Scholes Merton (BSM) model. This framework is derived from a partial differential equation that also relies on market assumptions.
+\\
+\\
+This study extends previous work and hopes to implement and apply deep reinforcement learning methods to price derivatives on assets in a diverse set of markets with more realistic conditions. This research aims to extend previous work by implementing deep reinforcement learning methods to price financial derivatives and perform dynamic hedging in a diverse set of markets with more realistic market conditions reflected through empirical data. The objective of the deep reinforcement learning approach is to perform better than traditional models on a variety of financial derivatives for multiple asset classes. Then, better hedging strategies can be implemented to achieve higher expected returns and lower volatilities. Multiple state-of-the-art reinforcement learning models will be compared against traditional baseline models for the financial derivatives considered. Furthermore, different methods will be used to identify the most important market conditions for the reinforcement learning agent hedging actions.
 
-\subsection{Dynamic Optimization Problem}
+\section{Related Works}
 
-Nullam rhoncus posuere lacus, id volutpat nisi pulvinar viverra. Quisque quis ultricies ante. Duis sollicitudin sapien nec consequat vehicula. Vestibulum convallis erat in arcu aliquam eleifend. Nunc scelerisque lorem non luctus sodales. Curabitur eleifend odio et sagittis semper. Praesent sodales, diam nec vulputate iaculis, neque leo consectetur nunc, a luctus lacus purus et dui. Sed sit amet tortor ullamcorper, malesuada libero quis, imperdiet tortor. Cras tempor blandit massa, sit amet molestie sapien tincidunt quis. Nullam hendrerit venenatis massa, sed lacinia ligula tincidunt vitae.
-
-Nam efficitur et lacus sed eleifend. Aenean quis ipsum eget leo ultrices ornare. Nullam rhoncus ante odio, at dignissim neque posuere eu. Pellentesque sodales tortor est, nec egestas sapien mollis quis. In lectus sapien, pellentesque congue erat consequat, hendrerit aliquet elit. Pellentesque eleifend purus ac diam bibendum, ac auctor ipsum posuere. Cras suscipit leo nec velit fermentum, id varius erat eleifend. Proin sagittis purus id ante lacinia, et congue eros tincidunt. Pellentesque at cursus tellus. Quisque id semper nunc. Quisque viverra a ex at ullamcorper. Morbi mollis erat at ex viverra fringilla. Proin ante dolor, dignissim sodales nisl ac, finibus egestas urna.
-
-Nulla porta urna at pulvinar consectetur. Pellentesque suscipit, neque vitae ultricies rutrum, eros tellus iaculis dui, nec pulvinar justo nibh eu urna. Ut euismod massa nisi, et bibendum risus placerat quis. Integer pretium nulla id risus lobortis laoreet. Aenean quis quam fringilla, elementum odio non, lacinia purus. Vestibulum dui sapien, mollis sit amet massa vel, egestas faucibus velit. Phasellus non justo ut ante vestibulum dictum. Nam in nibh et libero malesuada aliquet. Donec in ex in magna luctus volutpat.
-
-Sed quis dapibus libero. Curabitur id finibus nulla, sed semper felis. Proin dapibus nulla interdum, bibendum tortor et, blandit sapien. Etiam pretium tristique tortor non lacinia. Aliquam dapibus turpis lorem, sit amet porta ex dignissim vitae. In neque felis, sagittis sed ullamcorper lacinia, lobortis ut turpis. Nam quis aliquet justo. Nam eros mi, aliquam vel massa ac, ornare dignissim erat.  This is done by using some combination of
-\begin{eqnarray*}
-a_i & = & a_j + a_k \\
-a_i & = & 2a_j + a_k \\
-a_i & = & 4a_j + a_k \\
-a_i & = & 8a_j + a_k \\
-a_i & = & a_j - a_k \\
-a_i & = & a_j \ll m \mbox{shift}
-\end{eqnarray*}
-instead of the multiplication.  For example, you could use:
-\begin{eqnarray*}
-r & = & 4s + s\\
-r & = & r + r
-\end{eqnarray*}
-Or by xx:
-\begin{eqnarray*}
-t & = & 2s + s \\
-r & = & 2t + s \\
-r & = & 8r + t
-\end{eqnarray*}
-Cras pharetra ligula nec lectus bibendum, euismod mattis purus cursus. Nullam ut mi molestie purus ultricies lacinia. Phasellus sed orci ac lacus convallis vestibulum. Quisque id nulla ut ipsum finibus vehicula. Curabitur scelerisque erat lobortis, dapibus purus eget, faucibus sapien. Nam enim leo, faucibus id ante sed, fringilla luctus eros. Morbi vulputate, purus at commodo aliquet, turpis dolor sollicitudin libero, id vehicula risus dui sit amet nulla. Sed auctor efficitur urna. Praesent sagittis tellus ac velit vestibulum dignissim. Vivamus justo enim, pellentesque eu posuere id, mattis vitae felis. Aliquam id tincidunt diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+There have been previous works done using deep reinforcement learning for options pricing and hedging. The quantitative research team at JPMorgan Chase \& Co. has done research on "Deep Hedging" methods using deep reinforcement learning to devise optimal hedging strategies while accounting for market frictions and other factors that impact derivatives prices. In "Deep Hedging", the authors use Monte Carlo simulations to generate data with a parametric approach. However, as machine learning, and particularly reinforcement learning methods, need large amounts of representative data to learn and perform well, this study extends the "Deep Hedging" framework by using GAN-generated market data to train and evaluate deep hedging agents.

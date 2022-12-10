@@ -4,9 +4,40 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Baseline Methods}
+\chapter{Deep Reinforcement Learning for Derivatives Pricing}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis sollicitudin metus. Quisque quam ex, tincidunt et porttitor quis, tincidunt faucibus quam. Nulla facilisi. Nam a libero posuere, mattis leo ac, ultrices est. Nullam auctor lacus eu metus venenatis, gravida consectetur felis laoreet. Nam non ante felis. Maecenas id dignissim turpis, eget pulvinar nisl. Cras nec mauris feugiat, aliquam elit ac, blandit ex \cite{article-full}.
+\section{Motivations}
+Previous work done on derivatives pricing rely heavily on assumptions about the market and underlying stock movement to be consistent with theoretical standards for solving partial differential equations and deriving pricing models. For example, many simulations rely on the assumption that stock prices move according to a geometric Brownian motion stochastic process.
+\\
+\\
+As mentioned previously, one of the most famous and widely-used options pricing models is the Black-Scholes Merton model. This framework is derived from a partial differential equation that also relies on many market condition assumptions that may not necessarily hold true in the actual market. For example, the model assumes through the option’s lifetime: no dividend payouts, constant risk-free interest rate, constant underlying volatility, and no transaction costs. Furthermore, it assumes the market has no-arbitrage conditions and there are no transaction costs. However, these factors are all empirically dynamic and can affect underlying price movements and options premiums, but are not accounted for.
+\\
+\\
+Many market frictions exist and are dynamically changing over time, which impacts the value of financial derivatives. A model that includes realistic assumptions would be more appropriate to be used for derivatives pricing, as it would reflect the true nature of market conditions on which the derivatives are traded.
 
-Nunc vehicula velit nibh, ut facilisis magna blandit semper. Fusce varius odio in velit mattis porttitor. Vivamus aliquam vulputate quam, non auctor augue ornare ut. Vivamus ac pretium sapien, sed gravida elit. Etiam facilisis risus libero, sed vulputate velit lobortis sed. Aliquam erat volutpat. Sed est orci, dignissim nec varius et, auctor non purus \cite{proceedings-minimal,phdthesis-full}. Morbi feugiat gravida ipsum. Sed maximus nibh eget feugiat tempor. Pellentesque nec urna varius, volutpat dolor at, mattis leo. Vivamus elit eros, pretium sed magna nec, faucibus egestas enim. Vivamus ipsum ex, condimentum eu felis ac, tempus feugiat metus discussed in section~\ref{ch1:sec}.
+\section{Stochastic Options Pricing Models}
+To develop the framework for pricing derivatives with deep reinforcement learning methods, we first examine the theoretical foundation for options pricing with stochastic pricing models. 
 
+\section{Deep Reinforcement Learning}
+
+\subsubsection{Deep Learning}
+Early concepts of deep learning have been present since the 1950s in the form of perceptrons that could learn representations of the data. However, because of the perceptron's limited complexity combined with limitations in data and computing abilities, deep learning technology did not become widely adopted by institutions until the 21st century. The core of deep learning lies in its ability to learn incredibly complex and abstract relationships, both linear and non-linear, from vast amounts of data and be able to make accurate predictions using the learned representation. Often when the amount of data is enormous and dimensionality is high, deep learning has proven to be effective compared to traditional forms of statistical learning.
+
+\subsubsection{Reinforcement Learning}
+Reinforcement learning is a method that overcomes many limitations of traditional machine learning. It involves exposing an agent to an environment with different states, available actions, and rewards for those actions, and letting the agent learn to maximize rewards through a Markov decision process. This approach can be applied to a financial market environment with options trading with empirical economic and financial factors. The benefit of this approach is that it allows these factors to change dynamically across various time periods, which the agent will account for and gradually learn as it trains and explores the market environment.
+\\
+\\
+In a simplified world with only a limited number of states of the market, traditional reinforcement learning may be used. However, empirically, there are a very large number of states, with combinations of different factors including risk-free rates, stock movements, costs, etc. To account for the complexity, this study examines the use of deep reinforcement learning methods to learn the states and rewards of the market by fitting a deep neural network on empirical data, and using the learned states and rewards to train a reinforcement learning agent.
+\\
+\\
+The goal is to implement a deep reinforcement learning system that can accurately price derivatives and dynamically hedge given actual market conditions and market frictions. This can be done by using empirical data to learn the optimal policies for pricing and hedging through a policy gradient method. In the market environment, the agent will be given market conditions at each state and will incrementally learn the optimal hedging policy for correctly pricing derivatives and compute a P/L for the dynamic hedging strategy as a reward function. Furthermore, the agent will also be evaluated on return volatility and Sharpe ratio.
+
+\subsection{Model-Free vs. Model-Based}
+
+The increasing amount of available data and advancement in computing power has enabled machine learning algorithms to learn directly from empirical data and perform pattern recognition. Unlike the traditional methods previously described, machine learning methods do not rely on assumptions of the underlying data-generating process, but instead, try to learn the data-generating process based on observed data. It has been shown that machine learning can outperform traditional methods for many tasks including fields in computer vision, natural language processing, and time-series forecasting. This study examines the application of machine learning algorithms to financial derivatives analysis by trying to learn the optimal options pricing and dynamic hedging strategy based on data. Reinforcement learning provides a good foundation for such a task. The goal of this research is to explore methodologies in derivatives pricing and hedging strategies, and to propose a data-driven approach using multi-agent systems to optimize financial objectives.
+
+\section{Training Deep Hedging Agents}
+
+\section{Evaluating Deep Hedging Algorithms}
+
+\subsection{Comparing Performance to Greek Methods}
