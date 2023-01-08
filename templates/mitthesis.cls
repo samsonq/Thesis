@@ -410,12 +410,10 @@ reserved.\par\permission}}
 %% \copyrightnotice{stuff} to copyright to someone else, or
 %% \copyrightnoticetext{stuff} to specify the exact text of the copyright
 %% notice.
-\ifodd\vithesis \copyrightnoticetext{\copyright\ \@author,
-\uppercase\expandafter{\romannumeral\@degreeyear}.  All rights reserved.\par\permission}
+\ifodd\vithesis \copyrightnoticetext{\copyright\ 2023 Samson Qian. All Rights Reserved.\par\permission}
 %% or just
 %%\@degreeyear}}
-\typeout{Copyright given to author,
-	permission to copy/distribute given to MIT.}
+\typeout{The author hereby grants MIT permission to reproduce and to distribute publicly paper and electronic copies of this thesis document in whole or in part in any medium now known or hereafter created.}
 \else \typeout{Thesis document copyright MIT unless otherwise (manually) specified}
 \fi
 

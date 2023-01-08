@@ -4,19 +4,28 @@
 %% You can process specific files by typing their names in at the 
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
-\chapter{Applications of Multi-Agent Deep Reinforcement Learning}
+\chapter{Potentials of Reinforcement Learning and GANs in Finance}
 
-\section{Derivatives Pricing with Deep Reinforcement Learning}
+\section{Identifying Statistical Arbitrage Opportunities}
 
-\section{Dynamic Hedging Strategies with Deep Reinforcement Learning}
+In Chapter 3, we explored the implementation of a GAN-enabled deep reinforcement learning framework to price and hedge options. We can adapt this framework to find instances of options mispricing by identifying under-valued and over-valued options in the market and applying statistical arbitrage trading strategies.
 
-\subsection{The Greeks}
+\subsection{Capturing Mean Reversion with GANs}
+An essential component of statistical arbitrage strategies is based on the mean-reverting properties of financial time series to take advantage of price inefficiencies and divergence. As explored previously in Chapter 3, generative adversarial networks have the ability to learn the properties that empirical financial data exhibit. In the GAN-generated data, there are also patterns of price divergences in a wide variety of market scenarios. Although the term statistical arbitrage implies there is no risk to the strategy, there is actually a significant amount of risk when deploying statistical arbitrage strategies in the real markets as price movements are often unpredictable. In order to develop robust statistical arbitrage strategies, simply backtesting on historical data may not be sufficient, as discussed previously in Chapter 1. To make statistical arbitrage models and strategies more robust, it is possible to optimize and evaluate those models and strategies on AI-generated data with the same mean-reverting properties as historical data.
 
-\subsection{Dynamic Delta-Hedging}
+\subsection{Improving Pairs Trading}
 
-\section{Statistical Arbitrage with Deep Reinforcement Learning}
+One popular type of statistical arbitrage strategy is pairs trading which relies on the assumption of mean reversion between two highly-correlated assets.
+\\ \\
+In this analysis, we had limited data available to construct our model and strategy. To extend this analysis and implementation, it may be possible to collect more data on BIC and ACO and the factors we analyzed. However, if collecting more data is not possible, then it may be interesting to explore methods in generative AI to generate more representative market data. For example, using generative adversarial networks on the data can result in a generator that can produce synthetic and realistic data that is representative of real historical data. More data to train and evaluate our model and strategy can potentially make the model and strategy more robust to different circumstances, such as the 2018 to 2019 period we observed before.
+\\ \\
+Furthermore, as we have not included financial constraints, it may be possible to implement reinforcement learning methods to make this framework more appropriate for realistic market conditions. For example, we can use the generative AI framework described above to generate synthetic data in a synthetic market environment and allow a reinforcement learning agent to learn the optimal policy for trade execution timing and position sizing. This framework would allow us to include any constraints while trying to optimize an objective function. Furthermore, this reinforcement learning framework would be more robust when trained on realistic synthetic market data.
 
-We can take this framework to find instances of options mispricing by identifying under-valued and over-valued options in the market and applying statistical arbitrage trading strategies.
+\section{Developing Robust Risk Modeling Frameworks}
 
-\subsection{Pairs Trading Strategy}
+\subsection{Stress Testing using GAN-Based Market Simulation}
+
+The ability to simulate the possibilities and consequences of extreme market conditions is crucial for risk management. As the future is always unpredictable, Monte Carlo simulations have been widely adopted for simulating possible market scenarios. However, as previously discussed in Chapters 1 and 2, Monte Carlo simulations have limitations in simulating and representing market data. Instead, GANs are more capable of capturing true market dynamics by learning directly from historical market data. A potential application of GANs in risk management practices is to use GAN-based market simulations in stress testing and market risk assessment. GANs could be used to generate scenarios for extreme market conditions, such as severe stock price declines or sharp increases in interest rates. The consequences of market crashes are often unpredictable and hard to model with simple probabilistic simulations, but extreme market conditions can be emulated by GANs learning from, for example, market data during the 2008 financial crisis, or the COVID-19 pandemic. The market simulations generated by the GAN could then be used to stress test a portfolio and see how it would perform under these market conditions.
+
+\subsection{Value-at-Risk using GAN-Based Approach}
 

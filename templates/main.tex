@@ -25,7 +25,7 @@
 %% Page Intentionally Left Blank'', use the ``leftblank'' option, as
 %% above. 
 
-\documentclass[12pt,twoside]{mitthesis}
+\documentclass[12pt,vi,twoside]{mitthesis}
 \usepackage[english]{babel}
 \usepackage{lgrind}
 %% These have been added at the request of the MIT Libraries, because
@@ -42,6 +42,12 @@
 \usepackage[export]{adjustbox}
 \usepackage{lipsum}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{subfig}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
 
 % Algorithms
 \usepackage{algorithm}
@@ -69,9 +75,9 @@
 \include{chapters/chap3}
 \include{chapters/chap4}
 \include{chapters/chap5}
-\appendix
-\include{appa}
-\include{appb}
+%\appendix
+%\include{appa}
+%\include{appb}
 \include{biblio}
 \end{document}
 
