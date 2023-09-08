@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging">
+  <meta name="keywords" content="deep-reinforcement-learning, gan, generative-ai, options-pricing, dynamic-hedging">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="http://samsonqian.mit.edu/">Samson Qian</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Massachusetts Institute of Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://dspace.mit.edu/bitstream/handle/1721.1/150206/qian-samsonq-mfin-sloan-2023-file.pdf?sequence=1&isAllowed=y"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/samsonq/Thesis"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://dspace.mit.edu/handle/1721.1/150206"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Poster</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Advancements in computing capabilities have enabled machine learning algorithms to learn 
+            directly from large amounts of data. Deep reinforcement learning is a particularly powerful 
+            method that uses agents to learn by interacting with an environment of data. 
+            Although many traders and investment managers rely on traditional statistical and stochastic 
+            methods to price assets and develop trading and hedging strategies, deep reinforcement learning 
+            has proven to be an effective method to learn optimal policies for pricing and hedging. 
+            Machine learning removes the need for various parametric assumptions about underlying market dynamics 
+            by learning directly from data. This research examines the use of machine learning methods to 
+            develop a data-driven method of derivatives pricing and dynamic hedging. Nevertheless, machine learning 
+            methods like reinforcement learning require an abundance of data to learn. We explore the implementation 
+            of a generative adversarial network-based approach to generate realistic market data from past historical data. 
+            This data is used to train the reinforcement learning framework and evaluate its robustness. The results 
+            demonstrate the efficacy of deep reinforcement learning methods to price derivatives and hedge positions 
+            in the proposed systematic GAN-based market simulation framework.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Architecture. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Architecture</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our model is composed of the following components: 
+            <ul>
+              <li>
+                SignNet Positional Encoder
+                <ul>
+                  <li>
+                In the architecture we determined to use SignNet to compute
+                the positional encoding for each graph. We pre-computed
+                the top 50 eigenvalues and corresponding eigenvectors of the
+                laplacian matrix L of each graph. Then we used the com-
+                puted top 50 eigenvectors (Nx50) as the input for the SignNet.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Spectral clustering
+                <ul>
+                  <li>
+                    We trained a GNN model using pytorch-geometric and used
+                    the loss functions as the sum of minCUT Loss and orthogonal
+                    Loss to compute the cluster assignment for each graphs. We
+                    trained for each graph for about 50 iterations with a early stop
+                    threshold of loss decrease as 0.001. With the trained model
+                    we get the cluster assignments which we used in the next step
+                    to create virtual nodes and construct the heterogenous graph
+                    dataset.
+                    </li>
+                  </ul>
+              </li>
+              <li>
+                Heterogeneous graph
+                <ul>
+                  <li>
+                    From the original graphs after we trained and computed the
+                    clusters we will add one new virtual node for each of the clus-
+                    ter. For K clusters, where K is a arbitrary number, we will add
+                    K new virtual nodes. For each virtual node, we will add M
+                    new edges between all the nodes in one cluster and the new
+                    virtual node, where M is the number of the nodes in a clus-
+                    ter. After virtual nodes connect the local nodes, we will fully
+                    connect all the virtual nodes. To address the different proper-
+                    ties of the edges from local nodes to local nodes, the edges
+                    from local nodes to virtual nodes and the edges from virtual
+                    nodes to virtual nodes, we applied the idea of Heterogenous
+                    Graph Neural Network by using different message passing
+                    convolution layers for different types of edges.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </p>
+          <br>
+          <center>
+            <img src="static/images/figures/architecture.png" alt="Peptides Dataset Results." width="50%">
+          </center>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Architecture. -->
+
+
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Results. -->
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        Because of the limited time and computational resources, 
+        we could not run the experiment for all the datasets. 
+        Therefore, we chose the dataset Peptides-func and Peptides-struct and re-sampled citation dataset from Cora. 
+        We used Average Precision, Accuracy, and Mean Absolute Error corresponding to the dataset as suggested by the author. Our baseline models are GCN, GAT, GIN, and SAN. 
+    <br>
+    <br>
+        <div class="content has-text-justified">
+          <p>
+            The models are tested on the following datasets: 
+            <ul>
+              <li>Citation Dataset</li>
+              <li>Peptides Dataset</li>
+            </ul>
+          </p>
+          <p>
+            They are benchmarked against the following models: 
+            <ul>
+              <li>GCN</li>
+              <li>GAT</li>
+              <li>GIN</li>
+              <li>SAN ( (SAN is not used in the citation dataset due to la)</li>
+            </ul>
+            
+          </p>
+          <p>
+            The results of our model are shown below: 
+            As figures indicate, we achieved a similar performance as SAN for peptides datasets, which is better than other common Message-passing GNNs. Yet, we are way more efficient than SAN.
+            <br>
+          </p>
+
+          <img src="static/images/figures/citation_res.png" alt="Citation Dataset Results." width="35%">
+          <img src="static/images/figures/peptides_res.png" alt="Peptides Dataset Results." width="60%">
+
+        </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Discussion. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Discussion</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            As our model is not performing as well on the resampled citation datasets, we proposes the following potential causes:
+            <br>
+            <ul>
+              <li>
+                The Cora dataset originally might not contain very important long-range interactions, 
+                therefore after re-sample it's still not sure if the long-range interactions now contained in the graphs are strong enough to have great influences on the predictions. 
+              </li>
+              <li>
+                Cora dataset contains one single graph for node-level tasks. 
+                While our models work well for graph-level tasks, the cluster-method with the fully connected virtual 
+                nodes might lead the graph to another side of over-smoothing. While we used heterogenous GNN to try to address this possible issue, that might still has an influence on node-level predictions tasks. 
+              </li>
+        
+                </ul>
+              </li>
+            </ul>
+             
+            
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Discussion. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Works</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <ul>
+            <li>
+              <a href="https://arxiv.org/pdf/2210.11790.pdf">FoSR: First-Order Spectral Rewiring for Addressing Oversquashing in GNNs (ICLR 2023)</a>
+            </li>
+            <li>
+              <a href="https://arxiv.org/pdf/2111.14522.pdf">Understanding over-squashing and bottlenecks on graphs via curvature (ICRL 2022)</a>
+            </li>
+            <li>
+              <a href="https://proceedings.neurips.cc/paper/2021/file/b4fd1d2cb085390fbbadae65e07876a7-Paper.pdf">Rethinking Graph Transformers with Spectral Attention (SAN) (NeurIPS 2021)</a>
+            </li>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{samson-thesis
+  author    = {Qian, Samson},
+  title     = {Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging},
+  journal   = {MIT},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+          <br>
+            (Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
