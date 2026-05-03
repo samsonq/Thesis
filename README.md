@@ -22,3 +22,21 @@ realistic market data from past historical data. This data is used to train the
 reinforcement learning framework and evaluate its robustness. The results demonstrate
 the efficacy of deep reinforcement learning methods to price derivatives and hedge
 positions in the proposed systematic GAN-based market simulation framework.
+
+## 📚 Citation
+
+If you use this repository or build upon this work, please cite:
+
+> Qian, S. (2023). *Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging*. MIT Sloan School of Management.
+
+🔗 https://dspace.mit.edu/handle/1721.1/150206
+
+### BibTeX
+```bibtex
+@mastersthesis{qian2023multiagent,
+  title   = {Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging},
+  author  = {Qian, Samson},
+  year    = {2023},
+  school  = {Massachusetts Institute of Technology},
+  url     = {https://dspace.mit.edu/handle/1721.1/150206}
+}
