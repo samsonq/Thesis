@@ -33,7 +33,7 @@ If you use this repository or build upon this work, please cite:
 
 ### BibTeX
 ```bibtex
-@mastersthesis{qian2023multiagent,
+@mastersthesis{samsonqianthesis,
   title   = {Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging},
   author  = {Qian, Samson},
   year    = {2023},
