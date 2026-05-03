@@ -23,7 +23,7 @@ reinforcement learning framework and evaluate its robustness. The results demons
 the efficacy of deep reinforcement learning methods to price derivatives and hedge
 positions in the proposed systematic GAN-based market simulation framework.
 
-## 📚 Citation
+# Citation
 
 If you use this repository or build upon this work, please cite:
 
