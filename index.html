@@ -1,47 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging">
-  <meta name="keywords" content="deep-reinforcement-learning, gan, generative-ai, options-pricing, dynamic-hedging">
+  <meta name="description" content="Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging — MIT Master's Thesis by Samson Qian, MIT Sloan School of Management, 2023.">
+  <meta name="keywords" content="deep reinforcement learning, generative adversarial network, options pricing, dynamic hedging, derivatives, quantitative finance, machine learning, market simulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging</title>
+  <meta name="author" content="Samson Qian">
+  <title>Multi-Agent Deep RL &amp; GAN Market Simulation | MIT Thesis — Samson Qian</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
-  <!-- <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:ital,wght@0,400;0,600;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
 <body>
 
+<!-- ─── Navbar ─────────────────────────────────────────────────────────── -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -50,446 +30,514 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <!-- <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div> -->
 </nav>
 
-
-<section class="hero">
+<!-- ─── Hero ──────────────────────────────────────────────────────────── -->
+<section class="hero thesis-hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging</h1>
-          <div class="is-size-5 publication-authors">
+
+          <!--<p class="thesis-badge">MIT Master&rsquo;s Thesis &middot; 2023</p>-->
+
+          <h1 class="title is-1 publication-title">
+            Multi-Agent Deep Reinforcement Learning and GAN-Based Market
+            Simulation for Derivatives Pricing and Dynamic Hedging
+          </h1>
+
+          <div class="is-size-5 publication-authors" style="margin-bottom: 0.4rem;">
             <span class="author-block">
-              <a href="http://samsonqian.mit.edu/">Samson Qian</a></span>
+              <a href="http://samsonqian.mit.edu/" target="_blank" rel="noopener">Samson Qian</a>
+            </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Massachusetts Institute of Technology</span>
+          <div class="is-size-6 publication-authors institution-line">
+            <span>MIT Sloan School of Management — Master of Finance</span>
           </div>
 
-          <div class="column has-text-centered">
+          <div class="column has-text-centered" style="margin-top: 1.8rem; padding: 0;">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
                 <a href="https://dspace.mit.edu/bitstream/handle/1721.1/150206/qian-samsonq-mfin-sloan-2023-file.pdf?sequence=1&isAllowed=y"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
+                   class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>PDF</span>
                 </a>
               </span>
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
+              <span class="link-block">
+                <a href="https://dspace.mit.edu/entities/publication/9064e004-697f-455a-90ff-7f03451b3edf"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                  <span class="icon"><i class="ai ai-open-access"></i></span>
+                  <span>MIT DSpace</span>
                 </a>
-              </span> -->
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
-              <!-- Code Link. -->
+              </span>
               <span class="link-block">
                 <a href="https://github.com/samsonq/Thesis"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://dspace.mit.edu/handle/1721.1/150206"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Poster</span>
-                  </a>
+                   class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Source</span>
+                </a>
               </span>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-
+<!-- ─── Abstract ──────────────────────────────────────────────────────── -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified abstract-text">
           <p>
-            Advancements in computing capabilities have enabled machine learning algorithms to learn 
-            directly from large amounts of data. Deep reinforcement learning is a particularly powerful 
-            method that uses agents to learn by interacting with an environment of data. 
-            Although many traders and investment managers rely on traditional statistical and stochastic 
-            methods to price assets and develop trading and hedging strategies, deep reinforcement learning 
-            has proven to be an effective method to learn optimal policies for pricing and hedging. 
-            Machine learning removes the need for various parametric assumptions about underlying market dynamics 
-            by learning directly from data. This research examines the use of machine learning methods to 
-            develop a data-driven method of derivatives pricing and dynamic hedging. Nevertheless, machine learning 
-            methods like reinforcement learning require an abundance of data to learn. We explore the implementation 
-            of a generative adversarial network-based approach to generate realistic market data from past historical data. 
-            This data is used to train the reinforcement learning framework and evaluate its robustness. The results 
-            demonstrate the efficacy of deep reinforcement learning methods to price derivatives and hedge positions 
-            in the proposed systematic GAN-based market simulation framework.
+            Advancements in computing capabilities have enabled machine learning algorithms to learn
+            directly from large amounts of data. Deep reinforcement learning is a particularly powerful
+            method that uses agents to learn by interacting with an environment of data.
+            Although many traders and investment managers rely on traditional statistical and stochastic
+            methods to price assets and develop trading and hedging strategies, deep reinforcement learning
+            has proven to be an effective method to learn optimal policies for pricing and hedging.
+            Machine learning removes the need for various parametric assumptions about underlying market
+            dynamics by learning directly from data. This research examines the use of machine learning
+            methods to develop a data-driven approach to derivatives pricing and dynamic hedging.
+            Nevertheless, machine learning methods like reinforcement learning require an abundance of
+            data to learn. We explore the implementation of a generative adversarial network-based
+            approach to generate realistic market data from past historical data. This data is used to
+            train the reinforcement learning framework and evaluate its robustness. The results
+            demonstrate the efficacy of deep reinforcement learning methods to price derivatives and
+            hedge positions in the proposed systematic GAN-based market simulation framework.
           </p>
-
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-
   </div>
 </section>
 
+<!-- ─── Key Contributions ─────────────────────────────────────────────── -->
+<section class="section alt-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Key Contributions</h2>
+    <div class="columns is-centered is-multiline contribution-row">
+
+      <div class="column is-one-third">
+        <div class="box contribution-card">
+          <p class="contribution-number">01</p>
+          <h3 class="title is-5 contribution-title">GAN Market Simulator</h3>
+          <p class="contribution-body">
+            A Wasserstein GAN trained on historical equity data that generates arbitrarily many
+            synthetic and realistic forward return paths, capturing stock generic properties such as fat tails,
+            volatility clustering, and autocorrelation structure.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="box contribution-card">
+          <p class="contribution-number">02</p>
+          <h3 class="title is-5 contribution-title">Model-Free Pricing Engine</h3>
+          <p class="contribution-body">
+            A deep RL agent that learns to price derivatives without parametric assumptions,
+            operating directly from market state observations, removing any human-defined processes or models such as
+            Black-Scholes.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="box contribution-card">
+          <p class="contribution-number">03</p>
+          <h3 class="title is-5 contribution-title">Learned Hedging Policy</h3>
+          <p class="contribution-body">
+            A multi-agent framework that learns optimal discrete-time delta-hedging strategies
+            under realistic market frictions, including transaction costs and spreads, and
+            outperforming classical model-based benchmarks.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── System Overview ───────────────────────────────────────────────── -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Architecture. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Architecture</h2>
+    <h2 class="title is-3 section-title">System Overview</h2>
+    <div class="content has-text-justified" style="margin-bottom: 2rem;">
+      <p>
+        The proposed framework couples a GAN-based market simulation module with a multi-agent
+        deep reinforcement learning system. Historical equity and options data trains a generative
+        model that produces statistically faithful synthetic market scenarios. These scenarios form
+        the training environment in which RL agents learn optimal pricing and hedging policies
+        without ever imposing parametric assumptions on the underlying price process.
+      </p>
+    </div>
 
-        <div class="content has-text-justified">
-          <p>
-            Our model is composed of the following components: 
-            <ul>
-              <li>
-                SignNet Positional Encoder
-                <ul>
-                  <li>
-                In the architecture we determined to use SignNet to compute
-                the positional encoding for each graph. We pre-computed
-                the top 50 eigenvalues and corresponding eigenvectors of the
-                laplacian matrix L of each graph. Then we used the com-
-                puted top 50 eigenvectors (Nx50) as the input for the SignNet.
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Spectral clustering
-                <ul>
-                  <li>
-                    We trained a GNN model using pytorch-geometric and used
-                    the loss functions as the sum of minCUT Loss and orthogonal
-                    Loss to compute the cluster assignment for each graphs. We
-                    trained for each graph for about 50 iterations with a early stop
-                    threshold of loss decrease as 0.001. With the trained model
-                    we get the cluster assignments which we used in the next step
-                    to create virtual nodes and construct the heterogenous graph
-                    dataset.
-                    </li>
-                  </ul>
-              </li>
-              <li>
-                Heterogeneous graph
-                <ul>
-                  <li>
-                    From the original graphs after we trained and computed the
-                    clusters we will add one new virtual node for each of the clus-
-                    ter. For K clusters, where K is a arbitrary number, we will add
-                    K new virtual nodes. For each virtual node, we will add M
-                    new edges between all the nodes in one cluster and the new
-                    virtual node, where M is the number of the nodes in a clus-
-                    ter. After virtual nodes connect the local nodes, we will fully
-                    connect all the virtual nodes. To address the different proper-
-                    ties of the edges from local nodes to local nodes, the edges
-                    from local nodes to virtual nodes and the edges from virtual
-                    nodes to virtual nodes, we applied the idea of Heterogenous
-                    Graph Neural Network by using different message passing
-                    convolution layers for different types of edges.
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </p>
-          <br>
-          <center>
-            <img src="static/images/figures/architecture.png" alt="Peptides Dataset Results." width="50%">
-          </center>
+    <!-- Pipeline diagram -->
+    <div class="pipeline-wrapper">
+      <div class="pipeline">
 
+        <div class="pipeline-step">
+          <div class="pipeline-box">
+            <div class="pipeline-icon"><i class="fas fa-database"></i></div>
+            <div class="pipeline-label">Historical<br>Market Data</div>
+          </div>
         </div>
+
+        <div class="pipeline-connector">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="pipeline-box highlight">
+            <div class="pipeline-icon"><i class="fas fa-project-diagram"></i></div>
+            <div class="pipeline-label">GAN<br>Training</div>
+          </div>
+        </div>
+
+        <div class="pipeline-connector">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="pipeline-box">
+            <div class="pipeline-icon"><i class="fas fa-chart-area"></i></div>
+            <div class="pipeline-label">Synthetic<br>Price Paths</div>
+          </div>
+        </div>
+
+        <div class="pipeline-connector">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="pipeline-box highlight">
+            <div class="pipeline-icon"><i class="fas fa-brain"></i></div>
+            <div class="pipeline-label">RL Agent<br>Training</div>
+          </div>
+        </div>
+
+        <div class="pipeline-connector">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="pipeline-step">
+          <div class="pipeline-box">
+            <div class="pipeline-icon"><i class="fas fa-balance-scale"></i></div>
+            <div class="pipeline-label">Pricing &amp;<br>Hedging Policy</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pipeline-labels-row">
+        <div class="pipeline-phase-label">Input</div>
+        <div class="pipeline-phase-spacer"></div>
+        <div class="pipeline-phase-label accent">Market Simulation</div>
+        <div class="pipeline-phase-spacer"></div>
+        <div class="pipeline-phase-label">Simulated Env.</div>
+        <div class="pipeline-phase-spacer"></div>
+        <div class="pipeline-phase-label accent">Deep RL</div>
+        <div class="pipeline-phase-spacer"></div>
+        <div class="pipeline-phase-label">Output</div>
       </div>
     </div>
-    <!--/ Architecture. -->
-
-
 
   </div>
 </section>
 
+<!-- ─── Methodology ───────────────────────────────────────────────────── -->
+<section class="section alt-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title">Methodology</h2>
+
+    <!-- GAN subsection -->
+    <div class="method-block">
+      <div class="method-tag"><i class="fas fa-network-wired"></i>&nbsp; Module 1</div>
+      <h3 class="title is-4 method-title">GAN-Based Market Simulation</h3>
+      <div class="content has-text-justified">
+        <p>
+          Reinforcement learning agents require massive amounts of environment interaction data.
+          Historical financial time series are scarce — decades of daily data amount to only a few
+          thousand observations. To overcome this bottleneck, we train a
+          <strong>Wasserstein GAN with gradient penalty (WGAN-GP)</strong> on historical equity
+          prices and implied volatility surfaces to synthesize a virtually unlimited supply of
+          realistic market scenarios.
+        </p>
+        <p>
+          The <strong>generator</strong> maps a latent noise vector to sequences of market states
+          (spot prices, returns, volatilities, and option prices). The <strong>discriminator</strong>
+          distinguishes generated trajectories from real historical data. WGAN-GP training provides
+          stable convergence and well-calibrated gradient feedback. The resulting generator reproduces
+          key <em>stylized facts</em> of financial returns:
+        </p>
+        <ul>
+          <li><strong>Fat tails</strong> — excess kurtosis in the return distribution.</li>
+          <li><strong>Volatility clustering</strong> — periods of high variance followed by high variance (GARCH-like behavior).</li>
+          <li><strong>Autocorrelation</strong> — short-run momentum and long-run mean reversion.</li>
+          <li><strong>Leverage effect</strong> — negative correlation between returns and future volatility.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RL subsection -->
+    <div class="method-block">
+      <div class="method-tag"><i class="fas fa-robot"></i>&nbsp; Module 2</div>
+      <h3 class="title is-4 method-title">Deep Reinforcement Learning Framework</h3>
+      <div class="content has-text-justified">
+        <p>
+          The derivatives pricing and hedging problem is formulated as a
+          <strong>Markov Decision Process (MDP)</strong>. At each discrete time step the agent
+          observes the current market state and selects an action to maximize a long-run
+          risk-adjusted reward.
+        </p>
+
+        <div class="columns is-multiline mdp-table" style="margin-top: 1rem;">
+          <div class="column is-full">
+            <div class="box mdp-box">
+              <p class="mdp-label">State Space <span class="mdp-symbol">𝒮</span></p>
+              <p class="mdp-desc">
+                Current spot price, time-to-expiry, implied volatility, current portfolio Greeks
+                (Δ, Γ, Θ, Vega), normalized P&amp;L, and cash position.
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box mdp-box">
+              <p class="mdp-label">Action Space <span class="mdp-symbol">𝒜</span></p>
+              <p class="mdp-desc">
+                Continuous hedge ratio Δ ∈ [−1, 1] and, for the pricing agent, an option mid-price
+                offset from theoretical value.
+              </p>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box mdp-box">
+              <p class="mdp-label">Reward <span class="mdp-symbol">𝑟</span></p>
+              <p class="mdp-desc">
+                Risk-adjusted P&amp;L net of proportional transaction costs, with a variance penalty
+                to encourage stable hedging over time.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: 1rem;">
+          Agents are trained using <strong>Proximal Policy Optimization (PPO)</strong> with an
+          actor-critic architecture. The actor network outputs the hedging action distribution;
+          the critic estimates the state-value function used to compute advantages. Multiple agents
+          are instantiated across different option strikes and maturities to form the
+          <strong>multi-agent system</strong>, enabling generalization across the volatility surface.
+        </p>
+      </div>
+    </div>
+
+    <!-- Hedging subsection -->
+    <div class="method-block">
+      <div class="method-tag"><i class="fas fa-shield-alt"></i>&nbsp; Module 3</div>
+      <h3 class="title is-4 method-title">Dynamic Hedging Strategy</h3>
+      <div class="content has-text-justified">
+        <p>
+          Classical Black-Scholes delta hedging assumes <em>continuous rebalancing</em> and
+          <em>zero transaction costs</em> — assumptions that are violated in every real market.
+          Our RL hedging agent learns a <strong>discrete-time rebalancing policy</strong> that
+          directly accounts for bid-ask spreads and proportional transaction fees, optimizing a
+          mean-variance objective over the realized hedging P&amp;L distribution.
+        </p>
+        <p>
+          The learned policy adapts dynamically to changing market regimes: when transaction
+          costs are high relative to the option's Gamma exposure, the agent learns to
+          <em>under-hedge</em> and let the position drift — behavior consistent with optimal
+          bandwidth-based hedging theory but derived purely from interaction with the simulated
+          market environment.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Results ───────────────────────────────────────────────────────── -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Results. -->
-    
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Results</h2>
-        Because of the limited time and computational resources, 
-        we could not run the experiment for all the datasets. 
-        Therefore, we chose the dataset Peptides-func and Peptides-struct and re-sampled citation dataset from Cora. 
-        We used Average Precision, Accuracy, and Mean Absolute Error corresponding to the dataset as suggested by the author. Our baseline models are GCN, GAT, GIN, and SAN. 
-    <br>
-    <br>
-        <div class="content has-text-justified">
-          <p>
-            The models are tested on the following datasets: 
-            <ul>
-              <li>Citation Dataset</li>
-              <li>Peptides Dataset</li>
-            </ul>
-          </p>
-          <p>
-            They are benchmarked against the following models: 
-            <ul>
-              <li>GCN</li>
-              <li>GAT</li>
-              <li>GIN</li>
-              <li>SAN ( (SAN is not used in the citation dataset due to la)</li>
-            </ul>
-            
-          </p>
-          <p>
-            The results of our model are shown below: 
-            As figures indicate, we achieved a similar performance as SAN for peptides datasets, which is better than other common Message-passing GNNs. Yet, we are way more efficient than SAN.
-            <br>
-          </p>
+    <h2 class="title is-3 section-title">Results</h2>
 
-          <img src="static/images/figures/citation_res.png" alt="Citation Dataset Results." width="35%">
-          <img src="static/images/figures/peptides_res.png" alt="Peptides Dataset Results." width="60%">
+    <div class="content has-text-justified" style="margin-bottom: 2rem;">
+      <p>
+        The framework is evaluated on European call and put options on equity underlyings,
+        with GAN-generated market scenarios validated against held-out historical data.
+        Performance is benchmarked against Black-Scholes delta hedging and binomial tree pricing
+        under equivalent transaction cost assumptions.
+      </p>
+    </div>
 
+    <div class="columns is-centered is-multiline">
+      <div class="column is-one-third">
+        <div class="box result-card">
+          <div class="result-icon"><i class="fas fa-chart-bar"></i></div>
+          <p class="result-metric">Reduced Hedging Error</p>
+          <p class="result-description">
+            The RL hedging agent achieves lower P&amp;L variance than Black-Scholes delta
+            hedging when transaction costs are incorporated, particularly for high-Gamma
+            near-expiry options.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="box result-card">
+          <div class="result-icon"><i class="fas fa-wave-square"></i></div>
+          <p class="result-metric">GAN Fidelity</p>
+          <p class="result-description">
+            Synthetic price paths produced by the WGAN-GP match the return distribution,
+            autocorrelation function, and volatility clustering of real market data across
+            multiple equity underlyings.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="box result-card">
+          <div class="result-icon"><i class="fas fa-infinity"></i></div>
+          <p class="result-metric">Assumption-Free Pricing</p>
+          <p class="result-description">
+            The RL pricing agent learns competitive derivative prices without parametric
+            assumptions, generalizing across strikes and maturities on GAN-generated
+            out-of-sample scenarios.
+          </p>
         </div>
       </div>
     </div>
-    <!--/ Results. -->
 
   </div>
 </section>
 
+<!-- ─── Read the Thesis ────────────────────────────────────────────────── -->
+<section class="section alt-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 section-title has-text-centered">Read the Thesis</h2>
+    <p class="has-text-centered" style="margin-bottom: 1.5rem; color: #555;">
+      Full text available via MIT DSpace — open access.
+    </p>
+    <div class="pdf-embed-wrapper">
+      <iframe
+        src="https://dspace.mit.edu/bitstream/handle/1721.1/150206/qian-samsonq-mfin-sloan-2023-file.pdf?sequence=1&isAllowed=y"
+        title="MIT Thesis PDF"
+        width="100%"
+        height="720">
+      </iframe>
+      <p class="pdf-fallback">
+        <i class="fas fa-file-pdf"></i>&nbsp;
+        <a href="https://dspace.mit.edu/bitstream/handle/1721.1/150206/qian-samsonq-mfin-sloan-2023-file.pdf?sequence=1&isAllowed=y"
+           target="_blank" rel="noopener">Download PDF directly</a>
+        &nbsp;if the preview does not load.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Related Work ──────────────────────────────────────────────────── -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Discussion. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Discussion</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            As our model is not performing as well on the resampled citation datasets, we proposes the following potential causes:
-            <br>
-            <ul>
-              <li>
-                The Cora dataset originally might not contain very important long-range interactions, 
-                therefore after re-sample it's still not sure if the long-range interactions now contained in the graphs are strong enough to have great influences on the predictions. 
-              </li>
-              <li>
-                Cora dataset contains one single graph for node-level tasks. 
-                While our models work well for graph-level tasks, the cluster-method with the fully connected virtual 
-                nodes might lead the graph to another side of over-smoothing. While we used heterogenous GNN to try to address this possible issue, that might still has an influence on node-level predictions tasks. 
-              </li>
-        
-                </ul>
-              </li>
-            </ul>
-             
-            
-          </p>
-
-        </div>
-      </div>
+    <h2 class="title is-3 section-title">Related Work</h2>
+    <div class="content has-text-justified">
+      <ul class="related-list">
+        <li>
+          <strong>Buehler et al.</strong> —
+          <em>Deep Hedging</em> (Quantitative Finance, 2019).
+          Foundational work on RL-based hedging under transaction costs and market friction.
+        </li>
+        <li>
+          <strong>Halperin</strong> —
+          <em>QLBS: Q-Learner in the Black-Scholes-Merton Worlds</em> (Journal of Derivatives, 2019).
+          Q-learning formulation for options pricing and hedging.
+        </li>
+        <li>
+          <strong>Wiese et al.</strong> —
+          <em>Quant GANs: Deep Generation of Financial Time Series</em> (2020).
+          Temporal convolutional GAN architecture for financial time series generation.
+        </li>
+        <li>
+          <strong>Cao et al.</strong> —
+          <em>Gamma and Vega Hedging Using Deep Distributional Reinforcement Learning</em> (2020).
+          Deep RL for higher-order Greeks hedging.
+        </li>
+        <li>
+          <strong>Schulman et al.</strong> —
+          <em>Proximal Policy Optimization Algorithms</em> (OpenAI, 2017).
+          The PPO algorithm used for agent training.
+        </li>
+        <li>
+          <strong>Goodfellow et al.</strong> —
+          <em>Generative Adversarial Networks</em> (NeurIPS, 2014).
+          Original GAN framework extended in this work.
+        </li>
+        <li>
+          <strong>Arjovsky et al.</strong> —
+          <em>Wasserstein GAN</em> (ICML, 2017).
+          Training stability improvements adopted in the market simulation module.
+        </li>
+        <li>
+          <strong>Black &amp; Scholes</strong> —
+          <em>The Pricing of Options and Corporate Liabilities</em> (JPE, 1973).
+          Classical benchmark against which the RL agent is evaluated.
+        </li>
+      </ul>
     </div>
-    <!--/ Discussion. -->
-
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Works</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <ul>
-            <li>
-              <a href="https://arxiv.org/pdf/2210.11790.pdf">FoSR: First-Order Spectral Rewiring for Addressing Oversquashing in GNNs (ICLR 2023)</a>
-            </li>
-            <li>
-              <a href="https://arxiv.org/pdf/2111.14522.pdf">Understanding over-squashing and bottlenecks on graphs via curvature (ICRL 2022)</a>
-            </li>
-            <li>
-              <a href="https://proceedings.neurips.cc/paper/2021/file/b4fd1d2cb085390fbbadae65e07876a7-Paper.pdf">Rethinking Graph Transformers with Spectral Attention (SAN) (NeurIPS 2021)</a>
-            </li>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
+<!-- ─── BibTeX ────────────────────────────────────────────────────────── -->
+<section class="section alt-section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{samson-thesis
-  author    = {Qian, Samson},
-  title     = {Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging},
-  journal   = {MIT},
-  year      = {2023},
+    <h2 class="title is-3 section-title">BibTeX</h2>
+    <pre class="bibtex-block"><code>@mastersthesis{qian2023thesis,
+  author = {Qian, Samson},
+  title  = {Multi-Agent Deep Reinforcement Learning and {GAN}-Based Market Simulation
+            for Derivatives Pricing and Dynamic Hedging},
+  school = {Massachusetts Institute of Technology},
+  year   = {2023},
+  url    = {https://dspace.mit.edu/handle/1721.1/150206},
 }</code></pre>
   </div>
 </section>
 
-
+<!-- ─── Footer ────────────────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="https://dspace.mit.edu/bitstream/handle/1721.1/150206/qian-samsonq-mfin-sloan-2023-file.pdf?sequence=1&isAllowed=y"
+         target="_blank" rel="noopener" aria-label="Download PDF">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link"
+         href="https://github.com/samsonq/Thesis"
+         target="_blank" rel="noopener" aria-label="GitHub repository">
         <i class="fab fa-github"></i>
       </a>
+      <a class="icon-link"
+         href="https://dspace.mit.edu/entities/publication/9064e004-697f-455a-90ff-7f03451b3edf"
+         target="_blank" rel="noopener" aria-label="MIT DSpace">
+        <i class="ai ai-open-access"></i>
+      </a>
     </div>
-    <div class="columns is-centered">
+    <div class="columns is-centered" style="margin-top: 1rem;">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered" style="font-size: 0.85rem; color: #777;">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            Licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            &nbsp;&middot;&nbsp;
+            Website template adapted from
+            <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>.
           </p>
-          <p>
-          <br>
-            (Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
         </div>
       </div>
     </div>

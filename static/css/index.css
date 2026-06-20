@@ -1,157 +1,419 @@
+/* ── Base ─────────────────────────────────────────────────────────────── */
 body {
   font-family: 'Noto Sans', sans-serif;
+  color: #1a1a1a;
 }
 
-
-.footer .icon-link {
-    font-size: 25px;
-    color: #000;
+:root {
+  --mit-red:    #A31F34;
+  --mit-gray:   #8A8B8C;
+  --accent-bg:  #f8f8f8;
+  --card-hover: 0 6px 24px rgba(0, 0, 0, 0.11);
 }
 
-.link-block a {
-    margin-top: 5px;
-    margin-bottom: 5px;
+/* ── Typography helpers ───────────────────────────────────────────────── */
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 2.1rem !important;
+  line-height: 1.25;
+  color: #111;
 }
 
-.dnerf {
-  font-variant: small-caps;
-}
-
-
-.teaser .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
-}
-
-.teaser {
+.publication-authors {
   font-family: 'Google Sans', sans-serif;
 }
 
-
-.publication-title {
-}
-
-.publication-banner {
-  max-height: parent;
-
-}
-
-.publication-banner video {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  object-fit: fit;
-}
-
-.publication-header .hero-body {
-}
-
-.publication-title {
-    font-family: 'Google Sans', sans-serif;
-}
-
-.publication-authors {
-    font-family: 'Google Sans', sans-serif;
-}
-
-.publication-venue {
-    color: #555;
-    width: fit-content;
-    font-weight: bold;
-}
-
-.publication-awards {
-    color: #ff3860;
-    width: fit-content;
-    font-weight: bolder;
-}
-
-.publication-authors {
-}
-
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+  color: hsl(204, 86%, 45%) !important;
+  text-decoration: none;
 }
 
 .publication-authors a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .author-block {
   display: inline-block;
 }
 
-.publication-banner img {
+.institution-line {
+  color: #555;
+  margin-top: 0.1rem;
+  font-size: 1rem !important;
 }
 
-.publication-authors {
-  /*color: #4286f4;*/
+.section-title {
+  font-family: 'Google Sans', sans-serif;
+  color: #111;
+  border-bottom: 3px solid var(--mit-red);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  margin-bottom: 1.5rem !important;
 }
 
-.publication-video {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-
-    overflow: hidden;
-    border-radius: 10px !important;
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.thesis-hero {
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-.publication-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.thesis-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--mit-red);
+  background: rgba(163, 31, 52, 0.08);
+  border: 1px solid rgba(163, 31, 52, 0.25);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1.4rem;
+  font-family: 'Google Sans', sans-serif;
 }
 
-.publication-body img {
+/* ── Links / Buttons ──────────────────────────────────────────────────── */
+.link-block a {
+  margin: 4px 5px;
 }
 
-.results-carousel {
-  overflow: hidden;
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.results-carousel .item {
-  margin: 5px;
-  overflow: hidden;
-  border: 1px solid #bbb;
+/* ── Alternating section background ──────────────────────────────────── */
+.alt-section {
+  background-color: var(--accent-bg) !important;
+}
+
+/* ── Abstract ─────────────────────────────────────────────────────────── */
+.abstract-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* ── Key Contributions ────────────────────────────────────────────────── */
+.contribution-row {
+  margin-top: 1.2rem;
+}
+
+.contribution-card {
+  height: 100%;
+  border-top: 4px solid var(--mit-red);
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+}
+
+.contribution-card:hover {
+  box-shadow: var(--card-hover);
+}
+
+.contribution-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--mit-red);
+  opacity: 0.14;
+  font-family: 'Google Sans', sans-serif;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.contribution-title {
+  font-family: 'Google Sans', sans-serif;
+  color: #111;
+  margin-bottom: 0.6rem !important;
+}
+
+.contribution-body {
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* ── Pipeline ─────────────────────────────────────────────────────────── */
+.pipeline-wrapper {
+  overflow-x: auto;
+  padding: 1rem 0 0.5rem;
+}
+
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 640px;
+  gap: 0;
+}
+
+.pipeline-step {
+  display: flex;
+  align-items: center;
+}
+
+.pipeline-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 2px solid #ddd;
   border-radius: 10px;
+  padding: 1rem 1.1rem;
+  min-width: 105px;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.pipeline-box:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.pipeline-box.highlight {
+  background: var(--mit-red);
+  border-color: var(--mit-red);
+}
+
+.pipeline-box.highlight .pipeline-icon,
+.pipeline-box.highlight .pipeline-label {
+  color: #fff;
+}
+
+.pipeline-icon {
+  font-size: 1.4rem;
+  color: var(--mit-red);
+  margin-bottom: 0.5rem;
+}
+
+.pipeline-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #444;
+  line-height: 1.35;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.pipeline-connector {
+  color: #aaa;
+  font-size: 1rem;
+  padding: 0 0.7rem;
+  flex-shrink: 0;
+}
+
+/* Phase labels below the pipeline */
+.pipeline-labels-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 640px;
+  margin-top: 0.7rem;
+  gap: 0;
+}
+
+.pipeline-phase-label {
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--mit-gray);
+  min-width: 105px;
+  letter-spacing: 0.04em;
+  font-family: 'Google Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+.pipeline-phase-label.accent {
+  color: var(--mit-red);
+  font-weight: 700;
+}
+
+.pipeline-phase-spacer {
+  flex: 0 0 2.4rem; /* matches connector width */
+}
+
+/* ── Methodology blocks ───────────────────────────────────────────────── */
+.method-block {
+  margin-bottom: 2.5rem;
+  padding: 1.6rem 1.8rem;
+  background: #fff;
+  border-radius: 10px;
+  border-left: 5px solid var(--mit-red);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.method-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mit-red);
+  margin-bottom: 0.5rem;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.method-title {
+  font-family: 'Google Sans', sans-serif;
+  color: #111;
+  margin-bottom: 1rem !important;
+}
+
+/* MDP table boxes */
+.mdp-box {
+  height: 100%;
+  background: var(--accent-bg);
+  border-radius: 8px;
+  padding: 1rem 1.2rem !important;
+  border: 1px solid #e0e0e0;
+}
+
+.mdp-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #111;
+  margin-bottom: 0.4rem;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.mdp-symbol {
+  font-size: 1.1rem;
+  color: var(--mit-red);
+}
+
+.mdp-desc {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ── Results cards ────────────────────────────────────────────────────── */
+.result-card {
+  height: 100%;
+  border-radius: 8px;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+  padding: 1.8rem 1.4rem !important;
+}
+
+.result-card:hover {
+  box-shadow: var(--card-hover);
+}
+
+.result-icon {
+  font-size: 2rem;
+  color: var(--mit-red);
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
+}
+
+.result-metric {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  font-family: 'Google Sans', sans-serif;
+  margin-bottom: 0.7rem;
+}
+
+.result-description {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* ── PDF embed ────────────────────────────────────────────────────────── */
+.pdf-embed-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+}
+
+.pdf-embed-wrapper iframe {
+  display: block;
+  border: none;
+}
+
+.pdf-fallback {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0.7rem;
+  background: #fff;
+}
+
+/* ── Related work list ────────────────────────────────────────────────── */
+.related-list {
+  list-style: none;
   padding: 0;
-  font-size: 0;
 }
 
-.results-carousel video {
-  margin: 0;
+.related-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-
-.interpolation-panel {
-  background: #f5f5f5;
-  border-radius: 10px;
+.related-list li:last-child {
+  border-bottom: none;
 }
 
-.interpolation-panel .interpolation-image {
-  width: 100%;
-  border-radius: 5px;
+.related-list li strong {
+  color: #111;
 }
 
-.interpolation-video-column {
+.related-list li em {
+  color: #444;
 }
 
-.interpolation-panel .slider {
-  margin: 0 !important;
+/* ── BibTeX ───────────────────────────────────────────────────────────── */
+.bibtex-block {
+  background: #1e1e2e;
+  border-radius: 8px;
+  padding: 1.4rem 1.6rem !important;
 }
 
-.interpolation-panel .slider {
-  margin: 0 !important;
+.bibtex-block code {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.84rem;
+  color: #cdd6f4;
+  background: transparent;
+  padding: 0;
 }
 
-#interpolation-image-wrapper {
-  width: 100%;
+/* ── Footer ───────────────────────────────────────────────────────────── */
+.footer {
+  background: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  padding: 2.5rem 1.5rem;
 }
-#interpolation-image-wrapper img {
-  border-radius: 5px;
+
+.footer .icon-link {
+  font-size: 1.4rem;
+  color: #555;
+  margin: 0 0.6rem;
+  transition: color 0.15s ease;
+}
+
+.footer .icon-link:hover {
+  color: var(--mit-red);
+}
+
+/* ── Responsive tweaks ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .publication-title {
+    font-size: 1.5rem !important;
+  }
+
+  .pipeline,
+  .pipeline-labels-row {
+    min-width: 480px;
+  }
+
+  .pipeline-box {
+    min-width: 82px;
+    padding: 0.8rem 0.6rem;
+  }
+
+  .method-block {
+    padding: 1.2rem 1.1rem;
+  }
 }
