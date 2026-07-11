@@ -1,11 +1,14 @@
 # Samson Qian's MIT Master's Thesis
-"Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging"
+
+**Multi-Agent Deep Reinforcement Learning and GAN-Based Market Simulation for Derivatives Pricing and Dynamic Hedging**
 
 Thesis submitted to the MIT Sloan School of Management in partial fulfillment of the requirements for the degree of Master of Finance at the Massachusetts Institute of Technology.
 
-Advisor: Professor Leonid Kogan
+**Advisor: Professor Leonid Kogan**
 
-# Abstract
+https://thesis.samsonqian.com
+
+## Abstract
 Advancements in computing capabilities have enabled machine learning algorithms to
 learn directly from large amounts of data. Deep reinforcement learning is a particularly 
 powerful method that uses agents to learn by interacting with an environment of
@@ -23,7 +26,7 @@ reinforcement learning framework and evaluate its robustness. The results demons
 the efficacy of deep reinforcement learning methods to price derivatives and hedge
 positions in the proposed systematic GAN-based market simulation framework.
 
-# Citation
+## Citation
 
 If you use this repository or build upon this work, please cite:
 
